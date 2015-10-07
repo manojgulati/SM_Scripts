@@ -24,8 +24,6 @@ _6436 = {
     # Set of parameters we wish to record (in order)
     'params_to_record': "VA,W,VAR,PF,VLN,A,F,A1,VA1,W1,VAR1,A2,VA2,W2,VAR2,FwdVAh,FwdWh,FwdVARh",
 
-#    'vendor': '0403',
-#    'product': '6001'
-    'vendor': '1027',
-    'product': '24577'
+    'vendor': '0403',
+    'product': '6001'
 }
