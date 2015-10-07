@@ -1,6 +1,6 @@
 # Path where the data gets stored
-DATA_PATH = "/Users/manojgulati/Documents/Test_SM_6436/"
-LOG_PATH = "/Users/manojgulati/Documents/Test_SM_6436/sm.log"
+DATA_PATH = "/home/pi/SM_Scripts/Test_EM6436/Sample_Files/"
+LOG_PATH = "/home/pi/SM_Scripts/Test_EM6436/Sample_Files/sm.log"
 
 # Parameters associated with USB-Modbus device
 

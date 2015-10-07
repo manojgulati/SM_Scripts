@@ -25,7 +25,7 @@ csv_file_path = os.path.join(DATA_PATH, str(csv_file_number) + ".csv")
 
 # Write header into the CSV
 write_csv_header(csv_file_path, "Timestamp," +
-                 meter_config.params_provided + "\n")
+                 meter_config.params_to_record + "\n")
 
 # Instantiate smartmeter
 smart_meter = SmartMeter(meter_config.retries, meter_config.com_method,
