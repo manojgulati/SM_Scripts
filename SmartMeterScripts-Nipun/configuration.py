@@ -1,6 +1,6 @@
 # Path where the data gets stored
-DATA_PATH = "/home/pi/Copy/"
-LOG_PATH = "/home/pi/Copy/sm.log"
+DATA_PATH = "/home/pi/SM_Scripts/Data/"
+LOG_PATH = "/home/pi/SM_Scripts/Data/sm.log"
 
 # Parameters associated with USB-Modbus device
 
