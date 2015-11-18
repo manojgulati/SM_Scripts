@@ -23,10 +23,6 @@ meter_config.param_indices = find_param_numbers(
 csv_file_number = count_num_files(DATA_PATH)
 csv_file_path = os.path.join(DATA_PATH, str(csv_file_number) + ".csv")
 
-# Write header into the CSV
-write_csv_header(csv_file_path, "Timestamp," +
-                 meter_config.params_to_record + "\n")
-
 # Instantiate smartmeter
 smart_meter = SmartMeter(meter_config.retries, meter_config.com_method,
                          meter_config.baudrate, meter_config.stopbits,
@@ -35,6 +31,10 @@ smart_meter = SmartMeter(meter_config.retries, meter_config.com_method,
 
 # Make a connection
 smart_meter.connect(meter_config.vendor, meter_config.product)
+
+# Write header into the CSV
+write_csv_header(csv_file_path, "Timestamp," +
+                 meter_config.params_to_record + "\n")
 
 # Read and write infinitely
 while True:

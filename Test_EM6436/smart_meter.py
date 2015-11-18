@@ -73,8 +73,8 @@ class SmartMeter(object):
             self.vendor = vendor
             self.product = product
             self.meter_port = find_tty_usb(vendor, product)
-            print 'vendor'
-            print 'product'
+            print vendor
+            print product
         else:
             self.meter_port = meter_port
         self.logger.info('Connecting to port: %s' % self.meter_port)
