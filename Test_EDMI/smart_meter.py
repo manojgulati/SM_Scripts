@@ -1,5 +1,13 @@
 from utils import find_tty_usb, convert_to_str
 from pymodbus.client.sync import ModbusSerialClient as ModbusClient
+# import pymodbus.payload
+# from pymodbus.payload import BinaryPayloadDecoder
+# from pymodbus.constants import Endian
+
+from pymodbus.constants import Endian
+from pymodbus.payload import BinaryPayloadDecoder
+from pymodbus.payload import BinaryPayloadBuilder
+
 import time
 from datetime import datetime
 import logging
@@ -105,10 +113,12 @@ class SmartMeter(object):
         were specified
         """
         try:
+            time.sleep(0.5)
             binary_data = self.client.read_holding_registers(
                 base_register, block_size, unit=meter_id)
             print "Try1"
             print binary_data.isError()
+            # print binary_data.registers
 
         except Exception as e:
             # Sleep for some time and again try to connect
@@ -120,12 +130,61 @@ class SmartMeter(object):
             binary_data = self.client.read_holding_registers(
                 base_register, block_size, unit=meter_id)
             print "Try2"
+            print binary_data.isError()
+            # print binary_data.registers
 
-        # print len(binary_data.registers)
-        print base_register, block_size, meter_id
+        # print len(binary_data.rep2int binary_data.isError()3isters)
+        # print base_register, block_size, meter_id
         # print type(binary_data.registers)
+        A1 = [binary_data.registers[0], binary_data.registers[1]]
+        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        A = decoder.decode_32bit_float()
+        print A
 
-        # data = ""
+        A1 = [binary_data.registers[2], binary_data.registers[3]]
+        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        A = decoder.decode_32bit_float()
+        print A
+
+        A1 = [binary_data.registers[4], binary_data.registers[5]]
+        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        A = decoder.decode_32bit_float()
+        print A
+
+        A1 = [binary_data.registers[6], binary_data.registers[7]]
+        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        A = decoder.decode_32bit_float()
+        print A
+
+        A1 = [binary_data.registers[36], binary_data.registers[37]]
+        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        A = decoder.decode_32bit_float()
+        print A
+
+        A1 = [binary_data.registers[42], binary_data.registers[43]]
+        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        A = decoder.decode_32bit_float()
+        print A
+
+        A1 = [binary_data.registers[46], binary_data.registers[47]]
+        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        A = decoder.decode_32bit_int()
+        print A
+
+
+
+
+
+
+        # decoder = BinaryPayloadDecoder.fromRegisters(binary_data.registers[3], byteorder=Endian.Big, wordorder=Endian.Big)
+        #
+        # A = decoder.decode_32bit_float()
+        #
+        # print A
+
+
+
+        data = ""
         # for i in range(0, (block_size - 1), 2):
         #     for j in params_indices:
         #         if(j == i):
@@ -133,8 +192,8 @@ class SmartMeter(object):
         #                 (binary_data.registers[i + 1] << 16) + binary_data.registers[i])
         #
         # data = data[:-1] + "\n"
-        # data = str(time.time()) + data
-        # return data
+        data = str(time.time()) + data
+        return data
 
     def write_csv(self, csv_path, data):
         """Writes a comma separted row of data into the csv

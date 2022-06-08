@@ -19,7 +19,7 @@ _EDMI = {
     'com_method': 'rtu',
     'timeout': 0.2,
     'base_register': 9001,
-    'block_size': 6,
+    'block_size': 88,
     'retries': 3,
 
     # All parameters provided (in order from base register)
