@@ -48,7 +48,10 @@ def find_tty_usb(idVendor, idProduct):
         if idp != idProduct:
             continue
         for subdir in os.listdir(dn):
+            # print subdir
             if subdir.startswith(dnbase + ':'):
                 for subsubdir in os.listdir(join(dn, subdir)):
+                    # print subsubdir
                     if subsubdir.startswith('ttyUSB'):
+                        # print subsubdir
                         return join('/dev', subsubdir)

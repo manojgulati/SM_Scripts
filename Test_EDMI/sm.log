@@ -1,0 +1,120 @@
+2022-06-08 16:14:10,706 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:14:10,706 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:24:03,726 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:24:03,726 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:27:03,103 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:27:03,103 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:27:15,631 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:27:15,631 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:27:34,516 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:27:34,516 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:27:41,344 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:27:41,344 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:27:55,875 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:27:55,875 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:28:55,216 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:28:55,217 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:29:17,862 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:29:17,863 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:29:33,461 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:29:33,461 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:36:00,366 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:36:00,366 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:36:54,478 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:36:54,478 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:38:49,091 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:38:49,091 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:39:07,239 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:39:07,239 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:39:31,420 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:39:31,420 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:40:17,016 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:40:17,016 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:40:28,393 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:40:28,393 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:41:40,794 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:41:40,794 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:43:05,954 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:43:05,954 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:43:32,469 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:43:32,469 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:43:33,026 - smart_meter - ERROR - object of type 'ExceptionResponse' has no len()
+Traceback (most recent call last):
+  File "/home/manoj/Documents/SM_Scripts/Test_EDMI/smart_meter.py", line 111, in read_from_meter
+    print len(binary_data)
+TypeError: object of type 'ExceptionResponse' has no len()
+2022-06-08 16:43:33,027 - smart_meter - INFO - Will now try to reconnect
+2022-06-08 16:43:33,027 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:43:33,027 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:44:41,935 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:44:41,935 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:44:42,465 - smart_meter - ERROR - object of type 'ExceptionResponse' has no len()
+Traceback (most recent call last):
+  File "/home/manoj/Documents/SM_Scripts/Test_EDMI/smart_meter.py", line 111, in read_from_meter
+    print len(binary_data)
+TypeError: object of type 'ExceptionResponse' has no len()
+2022-06-08 16:44:42,465 - smart_meter - INFO - Will now try to reconnect
+2022-06-08 16:44:42,466 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:44:42,466 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:45:06,819 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:45:06,819 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:45:07,352 - smart_meter - ERROR - object of type 'ExceptionResponse' has no len()
+Traceback (most recent call last):
+  File "/home/manoj/Documents/SM_Scripts/Test_EDMI/smart_meter.py", line 111, in read_from_meter
+    print len(binary_data)
+TypeError: object of type 'ExceptionResponse' has no len()
+2022-06-08 16:45:07,353 - smart_meter - INFO - Will now try to reconnect
+2022-06-08 16:45:07,353 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:45:07,353 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:45:43,548 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:45:43,548 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:45:44,070 - smart_meter - ERROR - 'ExceptionResponse' object has no attribute 'type'
+Traceback (most recent call last):
+  File "/home/manoj/Documents/SM_Scripts/Test_EDMI/smart_meter.py", line 113, in read_from_meter
+    print binary_data.type()
+AttributeError: 'ExceptionResponse' object has no attribute 'type'
+2022-06-08 16:45:44,070 - smart_meter - INFO - Will now try to reconnect
+2022-06-08 16:45:44,071 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:45:44,071 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:51:55,703 - smart_meter - INFO - Connecting to port: None
+2022-06-08 16:51:55,703 - smart_meter - INFO - Connected to port: None
+2022-06-08 16:51:56,204 - smart_meter - ERROR - Modbus Error: [Connection] Failed to connect[ModbusSerialClient(rtu baud[9600])]
+Traceback (most recent call last):
+  File "/home/manoj/Documents/SM_Scripts/Test_EDMI/smart_meter.py", line 109, in read_from_meter
+    base_register, block_size, unit=meter_id)
+  File "/home/manoj/anaconda3/envs/SIP/lib/python2.7/site-packages/pymodbus/client/common.py", line 114, in read_holding_registers
+    return self.execute(request)
+  File "/home/manoj/anaconda3/envs/SIP/lib/python2.7/site-packages/pymodbus/client/sync.py", line 108, in execute
+    raise ConnectionException("Failed to connect[%s]" % (self.__str__()))
+ConnectionException: Modbus Error: [Connection] Failed to connect[ModbusSerialClient(rtu baud[9600])]
+2022-06-08 16:51:56,205 - smart_meter - INFO - Will now try to reconnect
+2022-06-08 16:51:56,206 - smart_meter - INFO - Connecting to port: None
+2022-06-08 16:51:56,207 - smart_meter - INFO - Connected to port: None
+2022-06-08 16:56:50,877 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:56:50,877 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:57:25,672 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:57:25,672 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 16:57:49,759 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 16:57:49,759 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:08:23,461 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:08:23,461 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:09:30,656 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:09:30,656 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:10:40,878 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:10:40,878 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:14:16,717 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:14:16,717 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:14:26,659 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:14:26,660 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:15:12,109 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:15:12,109 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:15:40,504 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:15:40,504 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:16:11,076 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:16:11,077 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:16:38,100 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:16:38,101 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:17:15,364 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:17:15,365 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-06-08 17:19:15,698 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-06-08 17:19:15,698 - smart_meter - INFO - Connected to port: /dev/ttyUSB0

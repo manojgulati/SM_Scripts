@@ -53,11 +53,11 @@ class SmartMeter(object):
         self.logger.addHandler(self.fh)
 
     def connect(self, vendor="", product="", meter_port=None):
-        """Connects to a specific port (if specified). 
+        """Connects to a specific port (if specified).
         Else, if the device details
-        of USB-Modbus device are given, finds the port 
+        of USB-Modbus device are given, finds the port
         on which they are attached.
-        This may be needed as the serial port on RPi 
+        This may be needed as the serial port on RPi
         was observed to.
 
         Parameters
@@ -73,11 +73,12 @@ class SmartMeter(object):
             self.vendor = vendor
             self.product = product
             self.meter_port = find_tty_usb(vendor, product)
-            print vendor
-            print product
+            # print vendor
+            # print product
         else:
             self.meter_port = meter_port
         self.logger.info('Connecting to port: %s' % self.meter_port)
+
         self.client = ModbusClient(
             retries=self.retries, method=self.com_method,
             baudrate=self.baudrate, stopbits=self.stopbits, parity=self.parity,
@@ -106,6 +107,9 @@ class SmartMeter(object):
         try:
             binary_data = self.client.read_holding_registers(
                 base_register, block_size, unit=meter_id)
+            print "Try1"
+            print binary_data.isError()
+
         except Exception as e:
             # Sleep for some time and again try to connect
             time.sleep(0.5)
@@ -115,17 +119,22 @@ class SmartMeter(object):
                 vendor=self.vendor, product=self.product)
             binary_data = self.client.read_holding_registers(
                 base_register, block_size, unit=meter_id)
+            print "Try2"
 
-        data = ""
-        for i in range(0, (block_size - 1), 2):
-            for j in params_indices:
-                if(j == i):
-                    data = data + "," + convert_to_str(
-                        (binary_data.registers[i + 1] << 16) + binary_data.registers[i])
+        # print len(binary_data.registers)
+        print base_register, block_size, meter_id
+        # print type(binary_data.registers)
 
-        data = data[:-1] + "\n"
-        data = str(time.time()) + data
-        return data
+        # data = ""
+        # for i in range(0, (block_size - 1), 2):
+        #     for j in params_indices:
+        #         if(j == i):
+        #             data = data + "," + convert_to_str(
+        #                 (binary_data.registers[i + 1] << 16) + binary_data.registers[i])
+        #
+        # data = data[:-1] + "\n"
+        # data = str(time.time()) + data
+        # return data
 
     def write_csv(self, csv_path, data):
         """Writes a comma separted row of data into the csv
