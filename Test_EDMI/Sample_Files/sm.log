@@ -1,0 +1,4 @@
+2022-08-06 06:05:29,253 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-08-06 06:05:29,255 - smart_meter - INFO - Connected to port: /dev/ttyUSB0
+2022-08-08 11:08:48,178 - smart_meter - INFO - Connecting to port: /dev/ttyUSB0
+2022-08-08 11:08:48,179 - smart_meter - INFO - Connected to port: /dev/ttyUSB0

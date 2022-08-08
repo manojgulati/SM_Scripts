@@ -136,44 +136,52 @@ class SmartMeter(object):
         # print len(binary_data.rep2int binary_data.isError()3isters)
         # print base_register, block_size, meter_id
         # print type(binary_data.registers)
-        A1 = [binary_data.registers[0], binary_data.registers[1]]
-        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
-        A = decoder.decode_32bit_float()
-        print A
+        #A1 = [binary_data.registers[0], binary_data.registers[1]]
+        #decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        #A = decoder.decode_32bit_float()
+        #print A
 
-        A1 = [binary_data.registers[2], binary_data.registers[3]]
-        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
-        A = decoder.decode_32bit_float()
-        print A
+        #A1 = [binary_data.registers[2], binary_data.registers[3]]
+        #decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        #A = decoder.decode_32bit_float()
+        #print A
 
-        A1 = [binary_data.registers[4], binary_data.registers[5]]
-        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
-        A = decoder.decode_32bit_float()
-        print A
+        #A1 = [binary_data.registers[4], binary_data.registers[5]]
+        #decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        #A = decoder.decode_32bit_float()
+        #print A
 
-        A1 = [binary_data.registers[6], binary_data.registers[7]]
-        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
-        A = decoder.decode_32bit_float()
-        print A
+        #A1 = [binary_data.registers[6], binary_data.registers[7]]
+        #decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        #A = decoder.decode_32bit_float()
+        #print A
 
-        A1 = [binary_data.registers[36], binary_data.registers[37]]
-        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
-        A = decoder.decode_32bit_float()
-        print A
+        #A1 = [binary_data.registers[36], binary_data.registers[37]]
+        #decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        #A = decoder.decode_32bit_float()
+        #print A
 
-        A1 = [binary_data.registers[42], binary_data.registers[43]]
-        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
-        A = decoder.decode_32bit_float()
-        print A
+        #A1 = [binary_data.registers[42], binary_data.registers[43]]
+        #decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        #A = decoder.decode_32bit_float()
+        #print A
 
-        A1 = [binary_data.registers[46], binary_data.registers[47]]
-        decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
-        A = decoder.decode_32bit_int()
-        print A
-
-
-
-
+        #A1 = [binary_data.registers[46], binary_data.registers[47]]
+        #decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+        #A = decoder.decode_32bit_int()
+        #print A
+        data=""
+        k=1
+        for i in range(0,block_size-1,2):
+            A1=[binary_data.registers[i], binary_data.registers[i+1]]
+            decoder=BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+            if k!=1:
+                data=data+","+ convert_to_str((binary_data.registers[i] << 16) +binary_data.registers[i+1])
+            else:
+                data=convert_to_str((binary_data.registers[i] << 16) +binary_data.registers[i+1])
+                k=k+1
+        data=data+","+str(time.time())
+        print data
 
 
         # decoder = BinaryPayloadDecoder.fromRegisters(binary_data.registers[3], byteorder=Endian.Big, wordorder=Endian.Big)
@@ -184,7 +192,7 @@ class SmartMeter(object):
 
 
 
-        data = ""
+        #data = ""
         # for i in range(0, (block_size - 1), 2):
         #     for j in params_indices:
         #         if(j == i):
@@ -192,7 +200,7 @@ class SmartMeter(object):
         #                 (binary_data.registers[i + 1] << 16) + binary_data.registers[i])
         #
         # data = data[:-1] + "\n"
-        data = str(time.time()) + data
+        #data = str(time.time()) + data
         return data
 
     def write_csv(self, csv_path, data):
