@@ -4,9 +4,9 @@ from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 # from pymodbus.payload import BinaryPayloadDecoder
 # from pymodbus.constants import Endian
 
-from pymodbus.constants import Endian
-from pymodbus.payload import BinaryPayloadDecoder
-from pymodbus.payload import BinaryPayloadBuilder
+#from pymodbus.constants import Endian
+#from pymodbus.payload import BinaryPayloadDecoder
+#from pymodbus.payload import BinaryPayloadBuilder
 
 import time
 from datetime import datetime
@@ -113,11 +113,11 @@ class SmartMeter(object):
         were specified
         """
         try:
-            time.sleep(0.5)
+            #time.sleep(0.5)
             binary_data = self.client.read_holding_registers(
                 base_register, block_size, unit=meter_id)
-            print "Try1"
-            print binary_data.isError()
+            print("Try1")
+            print(binary_data.isError())
             # print binary_data.registers
 
         except Exception as e:
@@ -129,8 +129,8 @@ class SmartMeter(object):
                 vendor=self.vendor, product=self.product)
             binary_data = self.client.read_holding_registers(
                 base_register, block_size, unit=meter_id)
-            print "Try2"
-            print binary_data.isError()
+            print("Try2")
+            print(binary_data.isError())
             # print binary_data.registers
 
         # print len(binary_data.rep2int binary_data.isError()3isters)
@@ -173,15 +173,15 @@ class SmartMeter(object):
         data=""
         k=1
         for i in range(0,block_size-1,2):
-            A1=[binary_data.registers[i], binary_data.registers[i+1]]
-            decoder=BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
+            #A1=[binary_data.registers[i], binary_data.registers[i+1]]
+            #decoder=BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
             if k!=1:
                 data=data+","+ convert_to_str((binary_data.registers[i] << 16) +binary_data.registers[i+1])
             else:
                 data=convert_to_str((binary_data.registers[i] << 16) +binary_data.registers[i+1])
                 k=k+1
-        data=data+","+str(time.time())
-        print data
+        data=str(time.time())+","+data+"\n"
+        print(data)
 
 
         # decoder = BinaryPayloadDecoder.fromRegisters(binary_data.registers[3], byteorder=Endian.Big, wordorder=Endian.Big)
