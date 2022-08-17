@@ -29,6 +29,11 @@ smart_meter = SmartMeter(meter_config.retries, meter_config.com_method,
 # Make a connection
 smart_meter.connect(meter_config.vendor, meter_config.product)
 
+# Find the CSV file to write and write header to it
+# now = datetime.now()
+# csv_file_path =  os.path.join(DATA_PATH, now.strftime("%d-%B-%Y") + ".csv")
+# write_csv_header(csv_file_path,"Timestamp," + meter_config.params_provided + "\n")
+
 # Read and write infinitely
 while True:
     # Finding now day/month/year
@@ -40,5 +45,5 @@ while True:
     data = smart_meter.read_from_meter(
         meter_config.meter_id, meter_config.base_register,
         meter_config.block_size, meter_config.param_indices)
-    smart_meter.write_csv(csv_file_path, data) # disabled by Manoj
+    smart_meter.write_csv(csv_file_path, data) 
     time.sleep(0.3)

@@ -1,6 +1,6 @@
 # Path where the data gets stored
-DATA_PATH = "/home/pi/SM_Scripts/Test_EDMI/Sample_Files/"
-LOG_PATH = "/home/pi/SM_Scripts/Test_EDMI/Sample_Files/sm.log"
+DATA_PATH = "/home/pi/usb/Data_Files/"
+LOG_PATH = "/home/pi/usb/Data_Files/sm.log"
 
 #DATA_PATH = "/home/manoj/Documents/EDMI_Data/Sample_Files/"
 #LOG_PATH = "/home/manoj/Documents/EDMI_Data/Sample_Files/sm.log"
@@ -9,7 +9,7 @@ LOG_PATH = "/home/pi/SM_Scripts/Test_EDMI/Sample_Files/sm.log"
 # Parameters associated with USB-Modbus device
 
 _EDMI = {
-    'meter_id': 47,
+    'meter_id': 74,
     'stopbits': 1,
     'bytesize': 8,
     'parity': 'N',

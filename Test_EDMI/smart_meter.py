@@ -116,8 +116,8 @@ class SmartMeter(object):
             #time.sleep(0.5)
             binary_data = self.client.read_holding_registers(
                 base_register, block_size, unit=meter_id)
-            print("Try1")
-            print(binary_data.isError())
+            # print("Try1")
+            # print(binary_data.isError())
             # print binary_data.registers
 
         except Exception as e:
@@ -129,8 +129,8 @@ class SmartMeter(object):
                 vendor=self.vendor, product=self.product)
             binary_data = self.client.read_holding_registers(
                 base_register, block_size, unit=meter_id)
-            print("Try2")
-            print(binary_data.isError())
+            # print("Try2")
+            # print(binary_data.isError())
             # print binary_data.registers
 
         # print len(binary_data.rep2int binary_data.isError()3isters)

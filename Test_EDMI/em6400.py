@@ -41,4 +41,4 @@ while True:
     data = smart_meter.read_from_meter(
         meter_config.meter_id, meter_config.base_register,
         meter_config.block_size, meter_config.param_indices)
-    smart_meter.write_csv(csv_file_path, data) # disabled by Manoj
+    smart_meter.write_csv(csv_file_path, data)
