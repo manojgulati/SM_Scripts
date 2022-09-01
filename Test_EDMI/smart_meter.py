@@ -1,3 +1,4 @@
+
 from utils import find_tty_usb, convert_to_str
 from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 # import pymodbus.payload
@@ -113,22 +114,31 @@ class SmartMeter(object):
         were specified
         """
         try:
-            #time.sleep(0.5)
+            time.sleep(0.5)
+            #self.client=self.connect(vendor=self.vendor, product=self.product)
             binary_data = self.client.read_holding_registers(
                 base_register, block_size, unit=meter_id)
+            #print(self.client)
             # print("Try1")
-            # print(binary_data.isError())
-            # print binary_data.registers
+            if(binary_data.isError()==True):
+                self.client.close()
+                self.client=self.connect(vendor=self.vendor, product=self.product)
+                print("1st reconnect in try")
+	    # print binary_data.registers
 
         except Exception as e:
             # Sleep for some time and again try to connect
             time.sleep(0.5)
             self.logger.exception(e)
             self.logger.info('Will now try to reconnect')
-            self.client = self.connect(
-                vendor=self.vendor, product=self.product)
             binary_data = self.client.read_holding_registers(
                 base_register, block_size, unit=meter_id)
+            while(binary_data.isError()==True):
+                self.client.close()
+                self.client = self.connect(vendor=self.vendor, product=self.product)
+                binary_data = self.client.read_holding_registers(base_register, block_size, unit=meter_id)
+                print("2nd time connect in except")
+
             # print("Try2")
             # print(binary_data.isError())
             # print binary_data.registers
@@ -170,15 +180,22 @@ class SmartMeter(object):
         #decoder = BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
         #A = decoder.decode_32bit_int()
         #print A
+        #if(self.client==False):
+
+        while(binary_data.isError()==True):
+            self.client.close()
+            self.client = self.connect(vendor=self.vendor, product=self.product)
+            binary_data = self.client.read_holding_registers(base_register, block_size, unit=meter_id)
+            print("3rd time connect before storing in the file")
         data=""
         k=1
         for i in range(0,block_size-1,2):
             #A1=[binary_data.registers[i], binary_data.registers[i+1]]
             #decoder=BinaryPayloadDecoder.fromRegisters(A1, byteorder=Endian.Big, wordorder=Endian.Big)
             if k!=1:
-                data=data+","+ convert_to_str((binary_data.registers[i] << 16) +binary_data.registers[i+1])
+                data=data+","+ convert_to_str((binary_data.registers[i] << 16) + binary_data.registers[i+1])
             else:
-                data=convert_to_str((binary_data.registers[i] << 16) +binary_data.registers[i+1])
+                data=convert_to_str((binary_data.registers[i] << 16) + binary_data.registers[i+1])
                 k=k+1
         data=str(time.time())+","+data+"\n"
         print(data)
